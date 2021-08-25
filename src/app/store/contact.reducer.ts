@@ -18,6 +18,13 @@ const initialState: State = {
       phone: '0664 1234567',
       email: 'max.mustermann@gmail.com',
       address: 'Mustermannstraße 1'
+    },
+    {
+      firstName: 'Donald',
+      lastName: 'Duck',
+      phone: '0699 1234567',
+      email: 'donald.duck@gmail.com',
+      address: 'Entenhausen 10'
     }
   ]
 }
