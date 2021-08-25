@@ -8,6 +8,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { StoreModule } from '@ngrx/store';
 import { contactReducer } from './store/contact.reducer';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { contactReducer } from './store/contact.reducer';
   imports: [
     BrowserModule,
     NgbModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({contactList: contactReducer})
   ],
   providers: [],
