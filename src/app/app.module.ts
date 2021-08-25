@@ -6,6 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
+import { StoreModule } from '@ngrx/store';
+import { contactReducer } from './store/contact.reducer';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { ContactDetailsComponent } from './contact-details/contact-details.compo
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    StoreModule.forRoot({contactList: contactReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
