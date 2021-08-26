@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/contact.reducer';
@@ -9,7 +9,7 @@ import { addContact } from '../store/contact.actions';
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css']
 })
-export class ContactFormComponent implements OnInit {
+export class ContactFormComponent {
 
   contactForm: FormGroup = new FormGroup({
     firstName: new FormControl(''),
@@ -20,10 +20,6 @@ export class ContactFormComponent implements OnInit {
   });
 
   constructor(private store: Store<AppState>) { }
-
-  ngOnInit(): void {
-
-  }
 
   onSubmit() {
     const newContact = this.contactForm.value;

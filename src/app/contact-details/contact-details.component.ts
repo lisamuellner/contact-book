@@ -8,7 +8,7 @@ import { Contact } from '../store/contact';
 })
 export class ContactDetailsComponent implements OnInit {
 
-  @Input() selectedContact: Contact | undefined = undefined; 
+  @Input() selectedContact?: Contact; 
 
   constructor() { }
 

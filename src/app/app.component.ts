@@ -7,9 +7,7 @@ import { Contact } from './store/contact';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'contact-book';
-
-  selectedContact: Contact | undefined = undefined;
+  selectedContact?: Contact;
 
   selectContact(contact: Contact){
     this.selectedContact = contact;
