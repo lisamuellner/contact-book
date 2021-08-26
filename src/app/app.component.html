@@ -5,8 +5,8 @@
 </nav>
 <main>
   <section class="contacts-container">
-    <app-contact-list class="contact-list-container"></app-contact-list>
-    <app-contact-details></app-contact-details>
+    <app-contact-list class="mr-5"(contactSelected)="selectContact($event)"></app-contact-list>
+    <app-contact-details *ngIf="selectedContact !== undefined" [selectedContact]="selectedContact"></app-contact-details>
   </section>
   <hr>
   <app-contact-form></app-contact-form>

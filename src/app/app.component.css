@@ -7,7 +7,3 @@ main {
   display: flex;
   flex-direction: row;
 }
-
-.contact-list-container {
-  margin-right: 50px;
-}

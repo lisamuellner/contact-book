@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Contact } from './store/contact';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'contact-book';
+
+  selectedContact: Contact | undefined = undefined;
+
+  selectContact(contact: Contact){
+    this.selectedContact = contact;
+  }
 }
