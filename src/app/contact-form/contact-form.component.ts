@@ -24,6 +24,7 @@ export class ContactFormComponent {
   onSubmit() {
     const newContact = this.contactForm.value;
     this.store.dispatch(addContact(newContact));
+    this.contactForm.reset();
   }
 
 }
