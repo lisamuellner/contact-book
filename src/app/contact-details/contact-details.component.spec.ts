@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { ContactDetailsComponent } from './contact-details.component';
 
@@ -11,9 +12,7 @@ describe('ContactDetailsComponent', () => {
       declarations: [ ContactDetailsComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ContactDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -21,5 +20,22 @@ describe('ContactDetailsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display the contact details', () => {
+    const expectedContact = {
+      firstName: 'Max',
+      lastName: 'Mustermann',
+      phone: '0664 1234567',
+      email: 'max.mustermann@gmail.com',
+      address: 'Mustermannstraße 1'
+    };
+    const expectedValues = Object.values(expectedContact);
+    component.selectedContact = expectedContact;
+
+    fixture.detectChanges();
+
+    const tableValues = fixture.debugElement.queryAll(By.css('td')).map(element => element.nativeElement.innerHTML);
+    expect(tableValues).toEqual(expectedValues);
   });
 });
