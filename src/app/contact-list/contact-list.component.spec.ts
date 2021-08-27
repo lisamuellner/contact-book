@@ -8,6 +8,7 @@ import { ContactListComponent } from './contact-list.component';
 describe('ContactListComponent', () => {
   let component: ContactListComponent;
   let fixture: ComponentFixture<ContactListComponent>;
+  let store: MockStore<AppState>;
 
   const initialState: AppState = {
     contactList: {
@@ -33,10 +34,11 @@ describe('ContactListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ContactListComponent ],
-      providers: [ provideMockStore({ initialState }) ]
+      providers: [ provideMockStore({ initialState })]
     })
     .compileComponents();
 
+    store = TestBed.inject(MockStore);
     fixture = TestBed.createComponent(ContactListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -79,6 +81,14 @@ describe('ContactListComponent', () => {
 
     expect(component.selectedRow).toEqual(0);
     expect(firstRow.nativeElement.className).toEqual('table-active');
+  });
+
+  it('should display contacts not available when contact list is empty', () => {
+    store.setState({contactList: { contacts: []}});
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css('table'))).toBeNull();
+    const expectedMessage = 'No contacts available.'
+    expect(fixture.debugElement.query(By.css('p')).nativeElement.innerHTML).toEqual(expectedMessage);
   });
 
 });
