@@ -1,17 +1,20 @@
 <h4>Contact List</h4>
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let contact of contacts$ | async; let i = index" 
-      (click)="onTableRowClick(contact, i)"
-      [class.table-active]="i === selectedRow">
-    <td>{{ contact.firstName }}</td>
-    <td>{{ contact.lastName }}</td>
-  </tr>
-  </tbody>
-</table>
+<ng-container *ngIf="(contacts$ | async) as contacts">
+  <table *ngIf="contacts.length > 0; else noContacts" class="table table-hover">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contact of contacts$ | async; let i = index" 
+        (click)="onTableRowClick(contact, i)"
+        [class.table-active]="i === selectedRow">
+      <td>{{ contact.firstName }}</td>
+      <td>{{ contact.lastName }}</td>
+    </tr>
+    </tbody>
+  </table>
+</ng-container>
+<ng-template #noContacts>No contacts available.</ng-template>
