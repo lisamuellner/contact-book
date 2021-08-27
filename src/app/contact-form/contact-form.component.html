@@ -1,24 +1,34 @@
 <h4>New Contact</h4>
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="col-4">
-  <div class="mb-3">
-    <label for="first-name" class="form-label">First Name: </label>
-    <input id="first-name" class="form-control" type="text" formControlName="firstName">
+  <div class="form-group row">
+    <label for="first-name" class="col-sm-4 col-form-label">First Name: </label>
+    <div class="col-sm-8">
+      <input id="first-name" class="form-control" type="text" formControlName="firstName">
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="last-name" class="form-label">Last Name: </label>
-    <input id="last-name" class="form-control" type="text" formControlName="lastName">
+  <div class="form-group row">
+    <label for="last-name" class="col-sm-4 col-form-label">Last Name: </label>
+    <div class="col-sm-8">
+      <input id="last-name" class="form-control" type="text" formControlName="lastName">
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="phone" class="form-label">Phone: </label>
-    <input id="phone" class="form-control" type="text" formControlName="phone">
+  <div class="form-group row">
+    <label for="phone" class="col-sm-4 col-form-label">Phone: </label>
+    <div class="col-sm-8">
+      <input id="phone" class="form-control" type="text" formControlName="phone">
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">E-Mail: </label>
-    <input id="email" class="form-control" type="text" formControlName="email">
+  <div class="form-group row">
+    <label for="email" class="col-sm-4 col-form-label">E-Mail: </label>
+    <div class="col-sm-8">
+      <input id="email" class="form-control" type="text" formControlName="email">
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="address" class="form-label">Address: </label>
-    <input id="address" class="form-control" type="text" formControlName="address">
+  <div class="form-group row">
+    <label for="address" class="col-sm-4 col-form-label">Address: </label>
+    <div class="col-sm-8">
+      <input id="address" class="form-control" type="text" formControlName="address">
+    </div>
   </div>
   <button type="submit" class="btn btn-primary">Add Contact</button>
 </form>
