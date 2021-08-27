@@ -31,7 +31,7 @@ describe('ContactDetailsComponent', () => {
       address: 'Mustermannstraße 1'
     };
     const expectedValues = Object.values(expectedContact);
-    component.selectedContact = expectedContact;
+    component.contact = expectedContact;
 
     fixture.detectChanges();
 

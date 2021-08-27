@@ -4,6 +4,11 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../store/contact.reducer';
 import { addContact } from '../store/contact.actions';
 
+/**
+ * ContactFormComponent
+ * 
+ * displays a contact form and enables the user to add a new contact to the contact list
+ */
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
