@@ -1,6 +1,11 @@
 # ContactBook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+A small contact management application. 
+
+Features: 
+* shows a list of all registered contacts 
+* on click on a contact the details of this contact are shown 
+* possibility to add new contacts
 
 ## Development server
 
